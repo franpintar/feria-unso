@@ -2,6 +2,7 @@ import express from 'express';
 import notesRoutes from './routes/notesRoutes.ts';
 import { connectDB } from './config/db.ts';
 import dotenv from 'dotenv';
+import rateLimiter from './middleware/rateLimiter.ts';
 
 dotenv.config();
 
@@ -11,6 +12,7 @@ const PORT = process.env.PORT || 5001;
 connectDB();
 
 app.use(express.json());
+app.use(rateLimiter);
 
 app.use('/api/notes', notesRoutes);
 
