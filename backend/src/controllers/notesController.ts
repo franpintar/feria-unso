@@ -2,11 +2,11 @@ import { Request, Response } from 'express';
 import Note from '../models/Note.ts';
 
 export const getAllNotes = async (
-  req: Request,
+  _: Request,
   res: Response,
 ): Promise<Response> => {
   try {
-    const notes = await Note.find();
+    const notes = await Note.find().sort({createdAt: -1}); // newest first
     res.status(200).json(notes);
   } catch (error) {
     console.error('Error in getAllNotes controller', error);
