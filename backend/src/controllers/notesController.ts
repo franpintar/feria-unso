@@ -15,6 +15,22 @@ export const getAllNotes = async (
   return res;
 };
 
+export const getNoteById = async (
+  req: Request,
+  res: Response,
+): Promise<Response> => {
+  try {
+    const note = await Note.findById(req.params.id);
+    if (!note) return res.status(404).json({success: false, message: "Note not found."});
+
+    res.status(200).json(note);
+  } catch (error) {
+    console.error('Error in getNoteById controller', error);
+    res.status(500).json({ success: false, message: error });
+  }
+  return res;
+}
+
 export const createNote = async (
   req: Request,
   res: Response,
