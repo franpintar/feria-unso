@@ -1,4 +1,23 @@
 {
+  "name": "feria-unso",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm install --prefix backend && npm install --prefix frontend && npm run build --prefix frontend",
+    "start": "npm run start --prefix backend"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franpintar/feria-unso.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franpintar/feria-unso/issues"
+  },
+  "homepage": "https://github.com/franpintar/feria-unso#readme",
+  "description": "",
   "devDependencies": {
     "@eslint/js": "^9.32.0",
     "eslint": "^8.57.1",
