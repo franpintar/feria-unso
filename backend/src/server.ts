@@ -1,13 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import dotenv from 'dotenv';
 import path from 'path';
 
 import notesRoutes from './routes/notesRoutes.ts';
 import { connectDB } from './config/db.ts';
 import rateLimiter from './middleware/rateLimiter.ts';
-
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5001;
