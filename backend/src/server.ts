@@ -2,9 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import path from 'path';
 
-import notesRoutes from './routes/notesRoutes.ts';
-import { connectDB } from './config/db.ts';
-import rateLimiter from './middleware/rateLimiter.ts';
+import notesRoutes from './routes/notesRoutes.js';
+import { connectDB } from './config/db.js';
+import rateLimiter from './middleware/rateLimiter.js';
 
 const app = express();
 const PORT = process.env.PORT || 5001;

@@ -5,7 +5,7 @@ import {
   getAllNotes,
   getNoteById,
   updateNote,
-} from '../controllers/notesController.ts';
+} from '../controllers/notesController.js';
 
 const router = express.Router();
 
